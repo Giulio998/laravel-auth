@@ -22,14 +22,14 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth','verified'])
-->name('admin')
+->name('admin.')
 ->prefix('admin')
 ->group(function () {
     Route::get('', function () {
         return view('admin.dashboard');
     })->name('dashboard');
 
-    Route::resource('project', ProjectController::class);
+    Route::resource('projects', ProjectController::class);
 });
 
 
